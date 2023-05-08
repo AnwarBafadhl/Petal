@@ -2,6 +2,7 @@ package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +13,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText username, password;
-    Button btnlogin;
-    DB db;
+    Button signin, signup;
+    DBHelper db;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,10 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
-        btnlogin = findViewById(R.id.btnsignin);
+        signin = findViewById(R.id.signin);
+        signup = findViewById(R.id.signup);
+        db = new DBHelper(this);
 
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String user = username.getText().toString();
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "All the fields are Require", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Boolean checkuserPass = db.checkUsernamePassword(user, pass);
+                    Boolean checkuserPass = db.checkusernamepassword(user, pass);
 
                     if(checkuserPass == true) {
                         Toast.makeText(MainActivity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
@@ -47,5 +51,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+                signup.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                        startActivity(intent);
+                    }
+                });
     }
 }

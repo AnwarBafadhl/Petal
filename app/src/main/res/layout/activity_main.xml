@@ -23,21 +23,42 @@
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
-        android:hint="User Name"
-        android:minHeight="48dp" />
+        android:layout_below="@id/logo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-420dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30C8C3C3"
+        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+        android:drawablePadding="20dp"
+        android:hint="Username"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
-        android:layout_marginTop="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="10dp"
+        android:background="#30C8C3C3"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="20dp"
         android:hint="Password"
-        android:minHeight="48dp" />
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/black" />
 
     <Button
-        android:id="@+id/btnsignin"
+        android:id="@+id/signin"
         android:layout_width="238dp"
         android:layout_height="48dp"
         android:layout_below="@id/password"
@@ -45,11 +66,11 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="80dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="140dp"
         android:backgroundTint="#F69667"
-        android:text="Sign up"
+        android:text="log in"
         android:textColor="#0C0B0B"
         android:textSize="30sp" />
 
@@ -57,7 +78,7 @@
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnsignin"
+        android:layout_below="@+id/signin"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -69,6 +90,39 @@
         android:textAlignment="center"
         android:textColor="#938F8F"
         android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/noAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/signin"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="-95dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="60dp"
+        android:text="Don't have an account?"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/signin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-140dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="60dp"
+        android:layout_toEndOf="@+id/noAccount"
+        android:backgroundTint="#F69667"
+        android:minHeight="48dp"
+        android:text="Sign up"
+        android:textColor="#0C0B0B" />
 
 
 </RelativeLayout>
